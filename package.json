@@ -1,0 +1,24 @@
+{
+  "name": "cypress-cucumber-boilerplate",
+  "version": "2.2.0",
+  "description": "This project is meant to be a kind of template to start working with Cucumber and Cypress just cloning the project.",
+  "main": "index.js",
+  "scripts": {
+    "e2e-desktop": "cypress open --e2e --browser chrome",
+    "e2e-mobile": "cypress open --e2e --config viewportWidth=375,viewportHeight=667",
+    "e2e-desktop-ci": "cypress run --spec cypress/e2e/features/* --record",
+    "e2e-mobile-ci": "cypress run --spec cypress/e2e/features/* --config viewportWidth=375,viewportHeight=667 --record"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Reyes Cuesta",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@bahmutov/cypress-esbuild-preprocessor": "latest",
+    "multiple-cucumber-html-reporter": "latest",
+    "cypress": "latest",
+    "esbuild": "latest"
+  }
+}
