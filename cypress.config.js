@@ -23,7 +23,7 @@ module.exports = defineConfig({
     setupNodeEvents,
     specPattern: "cypress/e2e/features/*.feature",
     projectId: "nzr7ts",
-    baseUrl: "https://www.bootcampqa.com/",
+    baseUrl: "https://aliciajuste.github.io/istqb-online-test/",
     chromeWebSecurity: true
   },
 });
