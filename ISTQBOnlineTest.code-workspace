@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../ISTQBOnlineTest"
+		},
+		{
+			"path": "../JavascriptExercises"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ISTQBOnlineTest"
+	}
+}
