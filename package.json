@@ -13,7 +13,7 @@
   "keywords": [
     "cypress"
   ],
-  "author": "Reyes Cuesta",
+  "author": "Alicia Juste",
   "license": "ISC",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.0.6",
