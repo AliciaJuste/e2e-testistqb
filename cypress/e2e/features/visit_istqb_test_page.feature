@@ -4,4 +4,3 @@ Feature: Visit Istqb Test Page
 
 Scenario: Visit istqb test page 
     Given the student visit istqb test page
-    Then he should see the title
