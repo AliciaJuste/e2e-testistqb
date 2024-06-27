@@ -1,9 +1,9 @@
 # Cypress-Istqb-Online-Test
 
-> Javascript, Cypress with Cucumber example project.
+> Javascript, Cypress with Cucumber project.
 
 ### 💻 Description
-E2e tests for https://aliciajuste.github.io/istqb-online-test/
+E2E tests for https://aliciajuste.github.io/istqb-online-test/
 
 JIRA PROJECT (ACCESS REQUIRED): https://aliciajuste-bootcampqa.atlassian.net/jira/software/projects/IOT/boards/4
 
