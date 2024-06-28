@@ -28,3 +28,7 @@ import {
   When('the student does not enter any name', () => {
     cy.get('[data-cy="student-name"]').clear();
   })
+
+  Then('the student should see the error message {string}', (errorMessage) => {
+    cy.get('[data-cy="welcome-message-error"]').should('have.text', errorMessage);
+  })
