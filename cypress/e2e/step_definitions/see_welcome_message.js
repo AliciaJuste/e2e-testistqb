@@ -30,3 +30,4 @@ import {
   Then('the student should see the error message {string}', (errorMessage) => {
     cy.get('[data-cy="welcome-message-error"]').should('have.text', errorMessage);
   })
+
