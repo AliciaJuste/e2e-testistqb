@@ -5,9 +5,8 @@ import {
 } from "@badeball/cypress-cucumber-preprocessor";
 
 
-Given('the student is on the ISTQB exam page', () => {
-    //Esta sentencia equivale a cy.visit("https://aliciajuste.github.io/istqb-online-test");
-    //porque la url está definida en la variable baseUrl del fichero cypress-config.js
+Background('Given the student is on the ISTQB exam page', () => {
+    // This step executes before each scenario
     cy.visit("/");
 });
 
