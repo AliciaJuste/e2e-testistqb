@@ -20,10 +20,10 @@ When('the student answer questions:', (dataTable) => {
 
 Then('the student clicks on the Final Score button', () => {
     // Hacer clic en el botón de Final Score
-    cy.get('[data-cy="final-Score-Button"]').click();
+    cy.get('[data-cy="final-score-button"]').click();
 });
 
 Then('the final score displayed should be {int}', (expectedScore) => {
-    cy.get('[data-cy="final-score"]'). should('have.text', 'Your final score is ' + expectedScore);
+    cy.get('[data-cy="response-final-score"]'). should('have.text', 'Your final score is ' + expectedScore);
 });
 

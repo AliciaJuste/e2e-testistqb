@@ -11,5 +11,5 @@ When('the student no selects any answer for question {string}', (questionNumber)
   
 Then('the student clicks on the Correct Answer button for question {string}', (questionNumber) => {
     // Hacer clic en el botón de ver respuesta
-    cy.get('[data-cy="question-' + questionNumber + '-Correct-Answer-Button"]').click();
+    cy.get('[data-cy="question-' + questionNumber + '-correct-answer-button"]').click();
 });
