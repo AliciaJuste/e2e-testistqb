@@ -5,7 +5,7 @@ import {
   } from "@badeball/cypress-cucumber-preprocessor";
   
 
-  Background('Given the student is on the ISTQB exam page', () => {
+  Given('the student is on the ISTQB exam page', () => {
     // This step executes before each scenario
     cy.visit("/");
   });
