@@ -23,7 +23,7 @@ Then('the student clicks on the Final Score button', () => {
     cy.get('[data-cy="final-score-button"]').click();
 });
 
-Then('the final score displayed should be {int}', (expectedScore) => {
-    cy.get('[data-cy="response-final-score"]'). should('have.text', 'Your final score is ' + expectedScore);
+Then('the final score displayed should be {int}', (totalScore) => {
+    cy.get('[data-cy="response-final-score"]'). should('have.text', 'The final score obtained is ' + totalScore + ' points');
 });
 

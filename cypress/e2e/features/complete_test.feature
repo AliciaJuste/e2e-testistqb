@@ -15,7 +15,7 @@ Scenario: Show final score when the student finishes the test with mixed correct
     | 6              | a              |
     | 7              | a              |
     | 8              | a              |
-    | 9              | c              |
-    | 10             | c              |
+    | 9              |                |
+    | 10             |                |
     And the student clicks on the Final Score button
     Then the final score displayed should be 7
