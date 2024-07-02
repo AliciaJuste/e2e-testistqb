@@ -27,13 +27,13 @@ Then('the student clicks on the Ranking button', () => {
 
 Then('the ranking list should be displayed with students sorted by score in descending order:', (dataTable) => {
 
-    dataTable.hashes().forEach(element => {
+    dataTable.hashes().forEach((element, index) => {
         const ranking = element.ranking;
         const studentName = element.studentName;
         const studentScore = element.studentScore;
-        cy.get('[data-cy="ranking' + ranking + '"]').should('have.text', ranking);
-        cy.get('[data-cy="studentName' + studentName + '"]').should('have.text', studentName);
-        cy.get('[data-cy="studentScore' + studentScore + '"]').should('have.text', studentScore);
+        cy.get(`[data-cy="ranking${index +1}"]`).should('have.text', ranking);
+        cy.get(`[data-cy="studentName${index +1}"]`).should('have.text', studentName);
+        cy.get(`[data-cy="studentScore${index +1}"]`).should('have.text', studentScore);
      });
     
 });
