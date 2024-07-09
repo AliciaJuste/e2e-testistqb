@@ -10,42 +10,28 @@ When('the student is on the test section', () => {
 });
 
 When('the student fill the test with the answers {string}', (selectedAnswers) => {
-    if (selectedAnswers !== "") {
-        const answers = selectedAnswers.split(',');
-        answers.forEach((answer, index) => {
-            const questionNumber = index + 1;
-            cy.get('[data-cy="question-' + questionNumber + '-form"]').find('input').check(answer);
-        });
-    } else { //No answers selected
-        for (let questionNumber = 1; questionNumber <= 10; questionNumber++) {
-            cy.get(`[data-cy="question-${questionNumber}-form"] input[type=radio]`).should('not.be.checked');
+    // Reset all forms
+    for (let i = 1; i <= 10; i++) {
+        cy.get(`[data-cy="question-${i}-form"] button[type="reset"]`).click();
+    }
+    
+    const answers = selectedAnswers.split(',');
+    answers.forEach((answer, index) => {
+        if (answer !== "") {
+            cy.get(`[data-cy="question-${index + 1}-form"]`).find('input').check(answer);
         }
-    }
+    });
 });
 
-Then('the student {int} clicks on the Ranking button', (numStudent) => {
+Then('the last student clicks on the Ranking button', () => {
     // Hacer clic en el botón de Ranking
-    if (numStudent === 3) {
-       cy.get('[data-cy="ranking-button"]').click();
-    }
+    cy.get('[data-cy="ranking-button"]').click();
 });
 
-Then('the ranking list should be displayed with students sorted by score in descending order if the student {int} has finished their test:', (numStudent, dataTable) => {
-    // Solo comprobar el ranking si es el tercer estudiante
-    if (numStudent === 3) {
-        // Asegurarse de que el localStorage está actualizado
-        cy.window().then((win) => {
-            const students = JSON.parse(win.localStorage.getItem('students') || '[]');
-            expect(students.length).to.be.at.least(3); // Asegurarse de que hay al menos 3 estudiantes
-        }).then(() => {
-            dataTable.hashes().forEach((element, index) => {
-                const ranking = element.ranking;
-                const studentName = element.studentName;
-                const studentScore = element.studentScore;
-                cy.get(`[data-cy="ranking${index +1}"]`).should('have.text', ranking);
-                cy.get(`[data-cy="student-name${index +1}"]`).should('have.text', studentName);
-                cy.get(`[data-cy="student-score${index +1}"]`).should('have.text', studentScore);
-            });
-        });
-    }
+Then('the ranking list should be displayed with students sorted by score in descending order:', (dataTable) => {
+    dataTable.hashes().forEach((row, index) => {
+        cy.get(`[data-cy="ranking${index +1}"]`).should('have.text', row.ranking);
+        cy.get(`[data-cy="student-name${index +1}"]`).should('have.text', row.studentName);
+        cy.get(`[data-cy="student-score${index +1}"]`).should('have.text', row.studentScore);
+    });
 });

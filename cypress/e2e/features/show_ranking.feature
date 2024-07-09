@@ -26,8 +26,8 @@ Scenario: 3 students make the test and display ranking of students in descending
     And the student clicks on the Final Score button
 
     #Verify Ranking
-    And the student 3 clicks on the Ranking button
-    Then the ranking list should be displayed with students sorted by score in descending order if the student 3 has finished their test:
+    And the last student clicks on the Ranking button
+    Then the ranking list should be displayed with students sorted by score in descending order:
 	| ranking | studentName       | studentScore |
 	| 1       | Alba Alvar        | 20           |
 	| 2       | Berto Boni        | 0            |
