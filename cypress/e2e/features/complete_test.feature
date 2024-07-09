@@ -1,10 +1,8 @@
 Feature: Complete test and see final score
 
-Background:
+Scenario: Show final score when the student finishes the test with mixed correct and incorrect answers
     Given the student is on the ISTQB exam page
     And the student visits the test section
-
-Scenario: Show final score when the student finishes the test with mixed correct and incorrect answers
     When the student answer questions:
     | questionNumber | selectedAnswer |
     | 1              | c              |
