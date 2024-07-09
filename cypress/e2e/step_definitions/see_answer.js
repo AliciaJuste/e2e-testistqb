@@ -16,10 +16,10 @@ When('the student selects answer {string} for question {string}', (selectedAnswe
 
 Then('the student clicks on the See Answer button for question {string}', (questionNumber) => {
     // Hacer clic en el botón de ver respuesta
-    cy.get(`[data-cy="question-${questionNumber}-See-Answer-Button"]`).click();
+    cy.get(`[data-cy="question-${questionNumber}-see-answer-button"]`).click();
 });
 
 Then('the student should see the message {string} for question {string}', (correctAnswerMessage, questionNumber) => {
-    cy.get(`[data-cy="response-Answer-${questionNumber}"]`).should('have.text', correctAnswerMessage);
+    cy.get(`[data-cy="response-answer-${questionNumber}"]`).should('have.text', correctAnswerMessage);
 
 });
