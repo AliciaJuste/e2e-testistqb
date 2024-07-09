@@ -23,16 +23,16 @@ When('the student fill the test with the answers {string}', (selectedAnswers) =>
     }
 });
 
-Then('the student {string} clicks on the Ranking button', (numStudent) => {
+Then('the student {int} clicks on the Ranking button', (numStudent) => {
     // Hacer clic en el botón de Ranking
-    if (numStudent === "3") {
+    if (numStudent === 3) {
        cy.get('[data-cy="ranking-button"]').click();
     }
 });
 
-Then('the ranking list should be displayed with students sorted by score in descending order if the student {string} has finished their test:', (numStudent, dataTable) => {
+Then('the ranking list should be displayed with students sorted by score in descending order if the student {int} has finished their test:', (numStudent, dataTable) => {
     // Solo comprobar el ranking si es el tercer estudiante
-    if (numStudent === "3") {
+    if (numStudent === 3) {
         // Asegurarse de que el localStorage está actualizado
         cy.window().then((win) => {
             const students = JSON.parse(win.localStorage.getItem('students') || '[]');
